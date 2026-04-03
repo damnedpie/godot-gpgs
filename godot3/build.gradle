@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library' version("8.6.1")
+    id 'org.jetbrains.kotlin.android' version("2.1.20")
+}
+
+android {
+    namespace 'com.jacobibanez.godot.gpgs'
+    compileSdk 35
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 35
+        versionCode pluginVersionCode
+        versionName pluginVersionName
+        consumerProguardFiles("proguard-rules.pro")
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+    ndkVersion '28.1.13356709'
+    buildToolsVersion '35.0.0'
+    libraryVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            output.outputFileName = "GodotGPGS.$pluginVersionName.${variant.name}.aar"
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    compileOnly 'org.godotengine:godot:3.6.2.stable'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.android.gms:play-services-games-v2:20.1.2'
+}
+
+tasks.register('buildIntoRelease', Copy) {
+    group = "build"
+    dependsOn tasks.build
+    from([buildDir.absolutePath, 'outputs', 'aar'].join(File.separator))
+    include("GodotGPGS.${pluginVersionName}.release.aar")
+    into([rootDir.absolutePath, 'release/godot3'].join(File.separator))
+}

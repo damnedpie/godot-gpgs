@@ -12,6 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Godot Google Play Game Services Android Plugin"
-include ':app'
-include ':app', ':godot-lib.release'
+
+include('godot3', 'godot4')
+
+rootProject.name = "Godot GPGS plugin"
