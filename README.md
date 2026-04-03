@@ -2,7 +2,6 @@
 [![GPGS](https://img.shields.io/badge/gpgs-20.1.2-gray?style=for-the-badge&logo=google%20play&logoColor=green&logoSize=auto&labelColor=gray&color=green)](https://developer.android.com/games/pgs/overview)
 [![Godot](https://img.shields.io/badge/Godot%20Engine-3.6.2-blue?style=for-the-badge&logo=godotengine&logoSize=auto)](https://godotengine.org/)
 [![Godot](https://img.shields.io/badge/Godot%20Engine-4.6.1-blue?style=for-the-badge&logo=godotengine&logoSize=auto)](https://godotengine.org/)
-[![GitHub License](https://img.shields.io/github/license/damnedpie/godot-gpgs?style=for-the-badge)](https://github.com/damnedpie/godot-gpgs/blob/main/LICENSE)
 [![GitHub Repo stars](https://img.shields.io/github/stars/damnedpie/godot-gpgs?style=for-the-badge&logo=github&logoSize=auto&color=%23FFD700)](https://github.com/damnedpie/godot-gpgs/stargazers)
 
 Godot Google Play Games Services 20.1.2 Android plugin for Godot. Built on Godot 3.6.2 / Godot 4.6.1 dependency.
